@@ -19,7 +19,7 @@ export const getGifs = async (category: string) => {
             limit: 10
         }
     }).then((images) => {
-        const data: Array<gif[]> = images.data.data.map((img: any) => {
+        const data: gif[] = images.data.data.map((img: any) => {
            return{
             title: img.title,
             id: img.id,
@@ -29,9 +29,5 @@ export const getGifs = async (category: string) => {
 
         return data;
     });
-
-    console.log(result);
-    //console.log(result.data.data);
-    //return result.data.data
     return result;
 }
