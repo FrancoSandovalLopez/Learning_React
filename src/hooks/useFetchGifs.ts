@@ -9,10 +9,12 @@ interface gif {
 
 export const useFetchGifs = (category: string) => {
   const [images, setImages] = useState<gif[]>();
+  const [isLoading, setIsLoading] = useState(true);
 
   const getImages = async () => {
     const newImages = await getGifs(category);
     setImages(newImages);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -22,6 +24,6 @@ export const useFetchGifs = (category: string) => {
 
   return {
     images: images,
-    isLoading: true,
+    isLoading: isLoading,
   };
 };
