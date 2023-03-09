@@ -1,0 +1,13 @@
+{
+  "roots": ["<rootDir>/tests"],
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "setupFilesAfterEnv": [
+    "@testing-library/react/dont-cleanup-after-each",
+    "@testing-library/jest-dom/extend-expect"
+  ],
+  "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+  "testEnvironment": "jsdom"
+}
